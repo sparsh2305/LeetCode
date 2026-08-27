@@ -1,0 +1,18 @@
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        # int num[]
+
+        # num.sort()
+
+        # int k == removeElement(nums, val)
+        # num.sort()
+
+        # for i in range(len(num)):
+            
+            ind =0 
+            for i in range(len(nums)):
+                if nums[i]!= val:
+                    nums[ind] = nums[i]
+                    ind+=1
+            return ind
+
