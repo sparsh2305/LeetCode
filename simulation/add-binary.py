@@ -1,9 +1,21 @@
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        r_bin = bin(int(a,2) + int(b,2))[2:]
+        i, j = len(a) - 1, len(b) - 1
+        carry = 0
+        ans = []
 
-        rfmt = f"{int(a, 2) + int(b, 2):b}"
+        while i >= 0 or j >= 0 or carry:
+            total = carry
 
-        return(r_bin)  
-        return(rfmt)
-        
+            if i >= 0:
+                total += int(a[i])
+                i -= 1
+
+            if j >= 0:
+                total += int(b[j])
+                j -= 1
+
+            ans.append(str(total % 2))
+            carry = total // 2
+
+        return ''.join(reversed(ans))
