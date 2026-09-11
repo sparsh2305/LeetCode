@@ -5,8 +5,14 @@ class Solution:
 
         total = 1
 
-        for i in range(2, num // 2 + 1):
+        i = 2
+        while i * i <= num:
             if num % i == 0:
                 total += i
+
+                if i != num // i:
+                    total += num // i
+
+            i += 1
 
         return total == num
