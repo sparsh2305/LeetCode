@@ -9,7 +9,7 @@ class Solution:
         while x>0:
             reverse = (reverse *10)+(x%10)
             x //=10
-        return reverse == xcopy
+        return reverse == xcopy 
 
 
         
